@@ -2,7 +2,7 @@
 
 ## Installation
 
-`git clone`
+`git clone https://github.com/eunchurn/uart-test`
 `npm install`
 
 ## Master
