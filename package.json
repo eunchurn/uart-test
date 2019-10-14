@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "master": "node ./master/index.js"
+    "master": "node ./master/index.js",
+    "slave": "node ./slave/index.js"
   },
   "keywords": [],
   "author": "",
