@@ -1,6 +1,6 @@
 const SerialPort = require("serialport");
-const port = new SerialPort("/dev/ttySAC3", {
-  baudRate: Number(process.argv.slice(2))
+const port = new SerialPort(process.argv[2], {
+  baudRate: Number(process.argv[3])
 });
 
 port.on("data", console.log);

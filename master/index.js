@@ -1,13 +1,11 @@
 const SerialPort = require("serialport");
-const Readline = require("@serialport/parser-readline");
-const port = new SerialPort("/dev/tty.usbserial-AL04V4NG", {
-  baudRate: Number(process.argv.slice(2))
+const port = new SerialPort(process.argv[2], {
+  baudRate: Number(process.argv[3])
 });
 
-const parser = new Readline();
-port.pipe(parser);
+const array = new Array(10000).map((val, index) => index);
+const sampleData = Buffer.from(array);
 
-parser.on("data", console.log);
 setInterval(() => {
-  port.write("!data:");
+  port.write(sampleData);
 }, 1000);
