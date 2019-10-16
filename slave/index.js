@@ -10,7 +10,7 @@ const port = new SerialPort(process.argv[2], {
 
 port.on("data", data => {
   console.log(`length: ${data.length}`, data.toString("hex"));
-  fs.writeFile("testdata.txt", data.toString("hex"), console.log);
+  fs.appendFile("testdata.txt", data.toString("hex"), console.log);
 });
 
 port.on("error", console.log);
